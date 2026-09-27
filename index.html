@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobayor Rahman | Portfolio</title>
+
+    <meta name="description"
+          content="Official portfolio of Jobayor Rahman — Education, ICT and Public Administration enthusiast.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --text: #334155;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.90);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background:
+                radial-gradient(circle at 80% 20%,
+                rgba(37,99,235,0.12),
+                transparent 30%),
+                var(--light);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 50px;
+            background: #dbeafe;
+            color: var(--primary-dark);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            color: var(--dark);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            color: var(--dark);
+            font-size: 36px;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            gap: 20px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row strong {
+            color: var(--dark);
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 35px 30px;
+            border-left: 2px solid #bfdbfe;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .timeline-item h3 {
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .date {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15,23,42,0.08);
+            border-color: #bfdbfe;
+        }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: #dbeafe;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 10px 17px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            border-radius: 20px;
+            padding: 55px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            padding: 10px 18px;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media(max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-grid,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .contact-box {
+                padding: 35px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="#" class="logo">
+            Jobayor<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                ICT • Education • Public Administration
+            </div>
+
+            <h1>
+                Hi, I'm <span>Jobayor Rahman.</span>
+            </h1>
+
+            <p>
+                A University of Dhaka graduate interested in ICT,
+                education, digital transformation and public-sector
+                development.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn btn-primary">
+                    Explore My Portfolio
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>About Me</span>
+            <h2>Professional Profile</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am a graduate of the University of Dhaka with
+                    an academic background in Education and a strong
+                    interest in ICT applications and public-sector
+                    digital initiatives.
+                </p>
+
+                <p>
+                    I am particularly interested in using technology,
+                    analytical thinking and effective communication
+                    to contribute to modern institutional and
+                    public-service environments.
+                </p>
+
+                <p>
+                    My experience includes academic and administrative
+                    internship work as well as examination script
+                    evaluation.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-row">
+                    <strong>Degree</strong>
+                    <span>B.Ed.</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>University</strong>
+                    <span>University of Dhaka</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>CGPA</strong>
+                    <span>3.55 / 4.00</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Location</strong>
+                    <span>Bangladesh</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Academic Journey</span>
+            <h2>Education</h2>
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <span class="date">2024</span>
+
+                <h3>
+                    Bachelor of Education (B.Ed.)
+                </h3>
+
+                <p>
+                    University of Dhaka
+                </p>
+
+                <p>
+                    CGPA: 3.55 / 4.00
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span class="date">2020</span>
+
+                <h3>
+                    Higher Secondary Certificate
+                </h3>
+
+                <p>
+                    Jashore Board — Science
+                </p>
+
+                <p>
+                    GPA: 5.00 / 5.00
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span class="date">2018</span>
+
+                <h3>
+                    Secondary School Certificate
+                </h3>
+
+                <p>
+                    Jashore Board — Science
+                </p>
+
+                <p>
+                    GPA: 5.00 / 5.00
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Professional Journey</span>
+            <h2>Experience</h2>
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    01
+                </div>
+
+                <h3>
+                    Intern — BCSIR School and College
+                </h3>
+
+                <p>
+                    Completed a six-month internship involving
+                    academic and administrative activities.
+                    Gained practical exposure to institutional
+                    workflows and office procedures.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    02
+                </div>
+
+                <h3>
+                    Script Evaluator — Udvash
+                </h3>
+
+                <p>
+                    Evaluated examination scripts according to
+                    answer keys while maintaining accuracy,
+                    consistency and organizational marking
+                    guidelines.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>What I Can Do</span>
+            <h2>Skills & Competencies</h2>
+        </div>
+
+
+        <div class="skills">
+
+            <div class="skill">
+                Computer Operations
+            </div>
+
+            <div class="skill">
+                MS Word
+            </div>
+
+            <div class="skill">
+                MS Excel
+            </div>
+
+            <div class="skill">
+                MS PowerPoint
+            </div>
+
+            <div class="skill">
+                Internet Research
+            </div>
+
+            <div class="skill">
+                Email Communication
+            </div>
+
+            <div class="skill">
+                Online Applications
+            </div>
+
+            <div class="skill">
+                Analytical Thinking
+            </div>
+
+            <div class="skill">
+                Communication
+            </div>
+
+            <div class="skill">
+                Time Management
+            </div>
+
+            <div class="skill">
+                Attention to Detail
+            </div>
+
+            <div class="skill">
+                Bengali
+            </div>
+
+            <div class="skill">
+                English
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>
+                Let's Connect
+            </h2>
+
+            <p>
+                Interested in education, ICT, digital transformation
+                and public-sector opportunities.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:jobayorrahman11@gmail.com">
+                    Email Me
+                </a>
+
+                <!-- Replace # with your actual GitHub URL -->
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+
+                <!-- Replace # with your LinkedIn URL -->
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    © 2026 Jobayor Rahman.
+    Built with HTML & CSS.
+
+</footer>
+
+
+</body>
+</html>
